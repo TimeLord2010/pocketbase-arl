@@ -4,6 +4,7 @@
 .DS_Store
 
 /ui/dist/
+/.claude/
 CLAUDE.md
 
 # goreleaser builds folder
