@@ -536,7 +536,7 @@ func TestCollectionCreate(t *testing.T) {
 				`"type":"base"`,
 				`"system":false`,
 				// ensures that id field was prepended
-				`"fields":[{"autogeneratePattern":"[a-z0-9]{15}","hidden":false,"id":"text3208210256","max":15,"min":15,"name":"id","pattern":"^[a-z0-9]+$","presentable":false,"primaryKey":true,"required":true,"system":true,"type":"text"},{"autogeneratePattern":"","hidden":false,"id":"12345789","max":0,"min":0,"name":"test","pattern":"","presentable":false,"primaryKey":false,"required":false,"system":false,"type":"text"}]`,
+				`"fields":[{"autogeneratePattern":"[a-z0-9]{15}","hidden":false,"id":"text3208210256","max":15,"maxRenderLength":0,"min":15,"name":"id","pattern":"^[a-z0-9]+$","presentable":false,"primaryKey":true,"required":true,"system":true,"type":"text"},{"autogeneratePattern":"","hidden":false,"id":"12345789","max":0,"maxRenderLength":0,"min":0,"name":"test","pattern":"","presentable":false,"primaryKey":false,"required":false,"system":false,"type":"text"}]`,
 			},
 			ExpectedEvents: map[string]int{
 				"*":                              0,
@@ -585,7 +585,7 @@ func TestCollectionCreate(t *testing.T) {
 				`"name":"verified"`,
 				`"duration":123`,
 				// should overwrite the user required option but keep the min value
-				`{"autogeneratePattern":"","hidden":true,"id":"text2504183744","max":0,"min":10,"name":"tokenKey","pattern":"","presentable":false,"primaryKey":false,"required":true,"system":true,"type":"text"}`,
+				`{"autogeneratePattern":"","hidden":true,"id":"text2504183744","max":0,"maxRenderLength":0,"min":10,"name":"tokenKey","pattern":"","presentable":false,"primaryKey":false,"required":true,"system":true,"type":"text"}`,
 			},
 			NotExpectedContent: []string{
 				`"secret":"`,
@@ -789,7 +789,7 @@ func TestCollectionCreate(t *testing.T) {
 			ExpectedContent: []string{
 				`"name":"new"`,
 				`"type":"view"`,
-				`"fields":[{"autogeneratePattern":"","hidden":false,"id":"text3208210256","max":0,"min":0,"name":"id","pattern":"^[a-z0-9]+$","presentable":false,"primaryKey":true,"required":true,"system":true,"type":"text"}]`,
+				`"fields":[{"autogeneratePattern":"","hidden":false,"id":"text3208210256","max":0,"maxRenderLength":0,"min":0,"name":"id","pattern":"^[a-z0-9]+$","presentable":false,"primaryKey":true,"required":true,"system":true,"type":"text"}]`,
 			},
 			ExpectedEvents: map[string]int{
 				"*":                              0,
